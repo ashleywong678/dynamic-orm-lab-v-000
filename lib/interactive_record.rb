@@ -51,7 +51,7 @@ class InteractiveRecord
   def self.find_by(attr)
     sql = ""
     attr.each do |property, value|
-      binding.pry
+      # binding.pry
       sql = "SELECT * FROM #{table_name} WHERE #{property}.to_s = #{value}"
     end
     DB[:conn].execute(sql)
