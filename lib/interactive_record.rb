@@ -49,7 +49,7 @@ class InteractiveRecord
   end
   
   def self.find_by(attr)
-    
+    sql = "SELECT * FROM #{table_name} "
   end
     
 end
