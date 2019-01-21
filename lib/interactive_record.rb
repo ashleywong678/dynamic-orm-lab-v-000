@@ -53,6 +53,7 @@ class InteractiveRecord
     attr.each do |property, value|
       sql = "SELECT * FROM #{table_name} WHERE #{property} = #{value}"
     end
+    DB[:conn].execute(sql)
   end
     
 end
