@@ -52,7 +52,7 @@ class InteractiveRecord
     sql = ""
     attr.each do |property, value|
       sql = "SELECT * FROM #{table_name} WHERE ? = ?"
-      DB[:conn].execute(sql, property, value)
+      DB[:conn].execute(sql, property.to_s, value)
     end
   end
     
