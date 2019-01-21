@@ -52,7 +52,7 @@ class InteractiveRecord
     sql = ""
     attr.each do |property, value|
       binding.pry
-      sql = "SELECT * FROM #{table_name} WHERE #{property} = #{value}"
+      sql = "SELECT * FROM #{table_name} WHERE #{property}.to_s = #{value}"
     end
     DB[:conn].execute(sql)
   end
